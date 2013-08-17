@@ -22,3 +22,28 @@ D:\Game Development\Shooter\Shooter\Shooter\obj\x86\Debug\Microsoft.Xna.Framewor
 D:\Game Development\Shooter\Shooter\Shooter\obj\x86\Debug\Shooter.exe
 D:\Game Development\Shooter\Shooter\Shooter\obj\x86\Debug\Shooter.pdb
 D:\Game Development\Shooter\Shooter\Shooter\bin\x86\Debug\Content\Bitmap1.xnb
+E:\project\xna\2d\Shooter\Shooter\Shooter\bin\x86\Debug\Content\bgLayer1.xnb
+E:\project\xna\2d\Shooter\Shooter\Shooter\bin\x86\Debug\Content\bgLayer2.xnb
+E:\project\xna\2d\Shooter\Shooter\Shooter\bin\x86\Debug\Content\endMenu.xnb
+E:\project\xna\2d\Shooter\Shooter\Shooter\bin\x86\Debug\Content\explosion.xnb
+E:\project\xna\2d\Shooter\Shooter\Shooter\bin\x86\Debug\Content\laser.xnb
+E:\project\xna\2d\Shooter\Shooter\Shooter\bin\x86\Debug\Content\mainbackground.xnb
+E:\project\xna\2d\Shooter\Shooter\Shooter\bin\x86\Debug\Content\mainMenu.xnb
+E:\project\xna\2d\Shooter\Shooter\Shooter\bin\x86\Debug\Content\mine.xnb
+E:\project\xna\2d\Shooter\Shooter\Shooter\bin\x86\Debug\Content\mineAnimation.xnb
+E:\project\xna\2d\Shooter\Shooter\Shooter\bin\x86\Debug\Content\player.xnb
+E:\project\xna\2d\Shooter\Shooter\Shooter\bin\x86\Debug\Content\shipAnimation.xnb
+E:\project\xna\2d\Shooter\Shooter\Shooter\bin\x86\Debug\Content\Bitmap1.xnb
+E:\project\xna\2d\Shooter\Shooter\Shooter\bin\x86\Debug\Content\Sound\explosion.xnb
+E:\project\xna\2d\Shooter\Shooter\Shooter\bin\x86\Debug\Content\Sound\laserFire.xnb
+E:\project\xna\2d\Shooter\Shooter\Shooter\bin\x86\Debug\Content\Sound\gameMusic.xnb
+E:\project\xna\2d\Shooter\Shooter\Shooter\bin\x86\Debug\Content\Sound\menuMusic.xnb
+E:\project\xna\2d\Shooter\Shooter\Shooter\bin\x86\Debug\Content\gameFont.xnb
+E:\project\xna\2d\Shooter\Shooter\Shooter\bin\x86\Debug\Content\Sound\gameMusic.wma
+E:\project\xna\2d\Shooter\Shooter\Shooter\bin\x86\Debug\Content\Sound\menuMusic.wma
+E:\project\xna\2d\Shooter\Shooter\Shooter\bin\x86\Debug\Shooter.exe
+E:\project\xna\2d\Shooter\Shooter\Shooter\bin\x86\Debug\Shooter.pdb
+E:\project\xna\2d\Shooter\Shooter\Shooter\obj\x86\Debug\ResolveAssemblyReference.cache
+E:\project\xna\2d\Shooter\Shooter\Shooter\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+E:\project\xna\2d\Shooter\Shooter\Shooter\obj\x86\Debug\Shooter.exe
+E:\project\xna\2d\Shooter\Shooter\Shooter\obj\x86\Debug\Shooter.pdb
