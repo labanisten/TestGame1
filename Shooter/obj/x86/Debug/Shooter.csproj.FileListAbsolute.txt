@@ -47,3 +47,5 @@ E:\project\xna\2d\Shooter\Shooter\Shooter\obj\x86\Debug\ResolveAssemblyReference
 E:\project\xna\2d\Shooter\Shooter\Shooter\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 E:\project\xna\2d\Shooter\Shooter\Shooter\obj\x86\Debug\Shooter.exe
 E:\project\xna\2d\Shooter\Shooter\Shooter\obj\x86\Debug\Shooter.pdb
+D:\Game Development\Shooter\Shooter\Shooter\bin\x86\Debug\Content\lander.xnb
+D:\Game Development\Shooter\Shooter\Shooter\bin\x86\Debug\Content\lander_animation.xnb
