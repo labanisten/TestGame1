@@ -48,7 +48,7 @@ namespace Shooter
             //sets player move speed
             playerMoveSpeed = 8.0f;
             
-
+            
 
             base.Initialize();
         }
@@ -65,7 +65,11 @@ namespace Shooter
             //Player resource
             Vector2 playerPosition = new Vector2(GraphicsDevice.Viewport.TitleSafeArea.X, GraphicsDevice.Viewport.TitleSafeArea.Y + GraphicsDevice.Viewport.TitleSafeArea.Height / 2);
 
-            player.Initialize(Content.Load<Texture2D>("player"), playerPosition);
+            Animation playerAnimation = new Animation();
+            Texture2D playerTexture = Content.Load<Texture2D>("shipAnimation");
+            playerAnimation.Initialize(playerTexture, Vector2.Zero, 115, 69, 8, 30, Color.White, 1f, true);
+
+            player.Initialize(playerAnimation, playerPosition);
             // TODO: use this.Content to load your game content here
         }
 
@@ -90,6 +94,9 @@ namespace Shooter
                 this.Exit();
 
             // TODO: Add your update logic here
+
+            //Updates the player
+            player.Update(gameTime);
             //Save the previous state of keyboard
             previousKeyboardState = currentKeyboardState;
 

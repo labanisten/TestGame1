@@ -10,7 +10,7 @@ namespace Shooter
     class Player
     {
         //Player animation
-        public Texture2D PlayerTexture;
+        public Animation PlayerAnimation;
         //Player position
         public Vector2 Position;
         //Player State
@@ -20,18 +20,18 @@ namespace Shooter
         //player width
         public int Width
         {
-            get { return PlayerTexture.Width; }
+            get { return PlayerAnimation.FrameWidth; }
         }
         //Player Height
         public int Height
         {
-            get { return PlayerTexture.Height; }
+            get { return PlayerAnimation.FrameHeight; }
         }
 
-        public void Initialize(Texture2D texture, Vector2 position)
+        public void Initialize(Animation animation, Vector2 position)
         {
-            //sets the texture of player
-            PlayerTexture = texture;
+            PlayerAnimation = animation;
+                        
             //Sets starting position
             Position = position;
             //set player state True
@@ -39,13 +39,14 @@ namespace Shooter
             //set player health
             Health = 100;
         }
-        public void Update()
+        public void Update(GameTime gameTime)
         {
-
+            PlayerAnimation.Position = Position;
+            PlayerAnimation.Update(gameTime);
         }
         public void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(PlayerTexture, Position, null, Color.White, 0f, Vector2.Zero, 1f, SpriteEffects.None, 0f);
+            PlayerAnimation.Draw(spriteBatch);
 
         }
     }
