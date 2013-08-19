@@ -35,6 +35,17 @@ namespace Shooter
         ParallaxingBackground bgLayer1;
         ParallaxingBackground bgLayer2;
 
+        //Enemies
+        Texture2D enemyTexture;
+        List<Enemy> enemies;
+
+        //Rate at which enemy apear
+        TimeSpan enemySpawnTime;
+        TimeSpan previousSpawnTime;
+
+        //A random number generator
+        Random random;
+
         
 
         public Game1()
@@ -55,10 +66,22 @@ namespace Shooter
             player = new Player();
             //sets player move speed
             playerMoveSpeed = 8.0f;
+            //background
             bgLayer1 = new ParallaxingBackground();
             bgLayer2 = new ParallaxingBackground();
-
             mainBackground = Content.Load<Texture2D>("mainbackground");
+            //Enemies
+            enemies = new List<Enemy>();
+
+            //Set the time keepers to zero
+            previousSpawnTime = TimeSpan.Zero;
+
+            //used to determine how fast enemy respawns
+            enemySpawnTime = TimeSpan.FromSeconds(1.0f);
+
+            //initialize the random generator
+            random = new Random();
+
 
             base.Initialize();
         }
@@ -83,6 +106,12 @@ namespace Shooter
             //Load the parallaxing background
             bgLayer1.Initialize(Content, "bgLayer1", GraphicsDevice.Viewport.Width, -1);
             bgLayer2.Initialize(Content, "bgLayer2", GraphicsDevice.Viewport.Width, -2);
+
+            //load Enemy
+            enemyTexture = Content.Load<Texture2D>("mineAnimation");
+
+
+
             // TODO: use this.Content to load your game content here
         }
 
@@ -122,6 +151,10 @@ namespace Shooter
             //Update the parallaxing background
             bgLayer1.Update();
             bgLayer2.Update();
+            
+            //Update the enemies
+            UpdateEnemies(gameTime);
+            
 
             base.Update(gameTime);
         }
@@ -150,9 +183,52 @@ namespace Shooter
             player.Position.X = MathHelper.Clamp(player.Position.X, 0, GraphicsDevice.Viewport.Width - (player.Width / 2));
             player.Position.Y = MathHelper.Clamp(player.Position.Y, (player.Height / 2), GraphicsDevice.Viewport.Height - (player.Height / 2));
         }
+        //Addmin enemies to the field!
+        private void AddEnemy()
+        {
+            //create an animation
+            Animation enemyAnimation = new Animation();
+
+            //initialize position with the correct sizes
+            enemyAnimation.Initialize(enemyTexture, Vector2.Zero, 47, 61, 8, 30, Color.White, 1f, true);
+
+            //initialize the position of the enemy
+            Vector2 position = new Vector2(GraphicsDevice.Viewport.Width + enemyTexture.Width / 2, random.Next(100, GraphicsDevice.Viewport.Height - 100));
+
+            //create an enmey
+            Enemy enemy = new Enemy();
+
+            //initialize the enmy
+            enemy.Initialize(enemyAnimation, position);
+
+            //add enemy to the game
+            enemies.Add(enemy);
+
+        }
+
+        private void UpdateEnemies(GameTime gameTime)
+        {
+            //spawn a new enemy every 1.5sec
+            if (gameTime.TotalGameTime - previousSpawnTime > enemySpawnTime)
+            {
+                previousSpawnTime = gameTime.TotalGameTime;
+
+                //add an enemy
+                AddEnemy();
+            }
+            //Update the enemies
+            for (int i = enemies.Count - 1; i >= 0; i--)
+            {
+                enemies[i].Update(gameTime);
+
+                if (enemies[i].Active == false)
+                {
+                    enemies.RemoveAt(i);
+                }
+            }
 
 
-
+        }
 
         /// <summary>
         /// This is called when the game should draw itself.
@@ -170,13 +246,13 @@ namespace Shooter
             bgLayer2.Draw(spriteBatch);
             //Draw Player
             player.Draw(spriteBatch);
-
-
-
+            //Draw Enemies
+            for (int i = 0; i < enemies.Count; i++)
+            {
+                enemies[i].Draw(spriteBatch);
+            }
 
             spriteBatch.End();
-
-
 
             base.Draw(gameTime);
         }
