@@ -1,1 +1,2 @@
 E:\project\xna\2d\Shooter\Shooter\ShooterContent\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\Game Development\Shooter\Shooter\ShooterContent\obj\x86\Debug\ShooterContent.contentprojResolveAssemblyReference.cache
